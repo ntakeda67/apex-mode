@@ -102,6 +102,14 @@ For detail, see `comment-dwim'."
    (let ((deactivate-mark nil) (comment-start "/*") (comment-end "*/"))
      (comment-dwim arg)))
 
+;; call "force login"
+(defun apex-mode-login-with-forcecli ()
+  "Login with Force.com cli."
+  (interactive)
+  (message "Login with your browser.")
+  (message (shell-command-to-string "force login"))
+  )
+
 (define-derived-mode apex-mode java-mode "Apex"
   "Major mode for editing Salesforce Apex files"
   :syntax-table apex-mode-syntax-table
